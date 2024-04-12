@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            // Open Close Principle 
+            /* Here we only use Abstract class to overcome modification in concrete class and make the class extensible  */
             List<Insurance> insurance = new List<Insurance>();
             insurance.Add(new HealthInsurance(1, "John"));
             insurance.Add(new MotorInsurance(2, "Jason"));
@@ -19,6 +21,9 @@
 
             Console.WriteLine();
 
+            // Liskov Substitution Principle
+            /* Here we only use Open and close principle with interfaces for uncommon functionality
+             * Here Term Insurance is not having No claim bonus hence we added interface for Insurancepremium and isolated No claim bonus function*/
             List<IInsurancePremium> employeesOnly = new List<IInsurancePremium>();
 
             employeesOnly.Add(new HealthInsurance(1, "John"));
